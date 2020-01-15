@@ -7,7 +7,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
+import business.Hotel;
 import business.Location;
 /**
  * @author fares
@@ -29,6 +31,29 @@ public class LocationRequest {
 		
 		
 
+	}
+	
+	public static ArrayList<Location> operatorSQL(String query) {
+		ArrayList<Location> readLocationList = new ArrayList<Location>();
+		try {
+			Connection dbConnection = JdbcConnection.getConnection();
+			java.sql.PreparedStatement preparedStatement = dbConnection.prepareStatement(query);
+			ResultSet result = preparedStatement.executeQuery();
+
+			while (result.next()) {
+				Location readLocation = new Hotel();
+				readLocation.setLocationId(result.getString("locationId"));
+				readLocation.setLocationLatitude(result.getString("locationLatitude"));
+				readLocation.setLocationLatitude(result.getString("locationLongitude"));
+				
+				readLocationList.add(readLocation);
+			}
+			preparedStatement.close();
+
+		} catch (SQLException se) {
+			System.err.println(se.getMessage());
+		}
+		return readLocationList;
 	}
 	
 	

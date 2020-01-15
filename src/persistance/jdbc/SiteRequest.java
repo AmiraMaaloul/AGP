@@ -18,9 +18,12 @@ import business.*;
 public class SiteRequest {
 	
 	public static void main(String[] args) {
-		System.out.println(readAllSite());
+		System.out.println(operatorSQL("select * FROM site"));
 	}
 	
+	public SiteRequest() {
+		
+	}
 	public static ArrayList<Site> operatorSQL(String query) {
 		ArrayList<Site> readSiteList = new ArrayList<Site>();
 		try {
@@ -45,7 +48,7 @@ public class SiteRequest {
 		return readSiteList;
 	}
 
-	public static Site readSiteById(int id) {
+	public static Site getSiteById(int id) {
 		Site readSite = new Site();
 		try {
 			String selectSiteQuery = "SELECT * FROM site AS a WHERE a.id = ? ";
@@ -71,6 +74,8 @@ public class SiteRequest {
 	}
 
 	private static ArrayList<Site> readAllSite() {
+		
+		System.out.println("okokokokok");
 		ArrayList<Site> readSiteList = new ArrayList<Site>();
 		try {
 			String selectSiteQuery = "SELECT * FROM site ";

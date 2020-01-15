@@ -75,6 +75,12 @@ public class Site extends Location {
 	public void setLocationId(String locationId) {
 		this.locationId = locationId;
 	}
+	
+	@Override
+	public String toString() {
+		return "Site [siteId=" + siteId + ", siteName=" + siteName + ", siteType=" + siteType + ", sitePrice="
+				+ sitePrice + ", locationId=" + locationId + "]";
+	}
 
 
 	

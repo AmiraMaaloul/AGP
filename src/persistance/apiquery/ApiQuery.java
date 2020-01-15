@@ -17,17 +17,9 @@ import persistance.lucene.LuceneOperator;
 
 
 public class ApiQuery {
-	
-	public static void main(String[] args) throws SQLException {
-	
-		
-		//String query = "SELECT * FROM site AS a with fares  ";
-		//ArrayList<Site>  readHotelList = executeQuerySite(query);
-		//System.out.println(readHotelList);
-	}
 
 
-	public static ArrayList<Site> executeQuerySite(String query) throws SQLException {
+	public ArrayList<Site> executeQuerySite(String query) throws SQLException {
 	
 	     	ArrayList<Site> results = new ArrayList<Site>();
 	     	
@@ -48,13 +40,13 @@ public class ApiQuery {
 		return HotelRequest.operatorSQL(querySQL);
 	}
 
-	//public static ArrayList<Location> simpleQueryLocation(String querySQL) {
-		//return LocationRequest.operatorSQL(querySQL);
-	//}
+	public static ArrayList<Location> simpleQueryLocation(String querySQL) {
+		return LocationRequest.operatorSQL(querySQL);
+	}
 
-	//public static ArrayList<Transport> simpleQueryTransport(String querySQL) {
-		//return TransportRequest.operatorSQL(querySQL);
-	//}
+	public static ArrayList<Transport> simpleQueryTransport(String querySQL) {
+		return TransportRequest.operatorSQL(querySQL);
+	}
 
 	public static ArrayList<String> textuelQuery(String keywords) {
 		return LuceneOperator.operator(keywords);
@@ -100,7 +92,7 @@ public class ApiQuery {
 	    for (String file : list) {
 			String[] element = file.split(".txt");
 			int id = Integer.valueOf(element[0]);
-			Site site = SiteRequest.readSiteById(id);
+			Site site = SiteRequest.getSiteById(id);
 			mixedResults.add(site);
 		}
 	    return mixedResults;

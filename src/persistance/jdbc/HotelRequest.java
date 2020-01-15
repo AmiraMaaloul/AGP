@@ -21,7 +21,7 @@ import business.Hotel;
 public class HotelRequest {
 	
 	public static void main(String[] args) {
-		System.out.println(readAllHotel());
+		System.out.println(operatorSQL("SELECT * FROM Hotel as a"));
 	}
 	
 	public HotelRequest() {
@@ -32,7 +32,7 @@ public class HotelRequest {
 		ArrayList<Hotel> readHotelList = new ArrayList<Hotel>();
 		try {
 			Connection dbConnection = JdbcConnection.getConnection();
-			java.sql.PreparedStatement preparedStatement = dbConnection.prepareStatement(query);
+			PreparedStatement preparedStatement = dbConnection.prepareStatement(query);
 			ResultSet result = preparedStatement.executeQuery();
 
 			while (result.next()) {
