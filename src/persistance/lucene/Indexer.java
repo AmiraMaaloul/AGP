@@ -35,7 +35,7 @@ public class Indexer {
       document.add(contentField);
       document.add(fileNameField);
       document.add(filePathField);
-      return document;
+      return document; 
    }   
    private void indexFile(File file) throws IOException {
       System.out.println("Indexing "+file.getCanonicalPath());
