@@ -13,9 +13,7 @@ import persistance.lucene.LuceneOperator;
 public class ApiQuery {
 
 
-
-
-public ArrayList<Site> executeQuery(String query) throws SQLException {
+public ArrayList<Site> executeQuerySite(String query) throws SQLException {
 
      	ArrayList<Site> results = new ArrayList<Site>();
      	
@@ -37,8 +35,20 @@ public ArrayList<Site> executeQuery(String query) throws SQLException {
 *
 */
 
-public static ArrayList<Site> simpleQuery(String querySQL) {
+public static ArrayList<Site> simpleQuerySite(String querySQL) {
 	return SiteRequest.operatorSQL(querySQL);
+}
+
+public static ArrayList<Site> simpleQueryHotel(String querySQL) {
+	return HotelRequest.operatorSQL(querySQL);
+}
+
+public static ArrayList<Site> simpleQueryLocation(String querySQL) {
+	return LocationRequest.operatorSQL(querySQL);
+}
+
+public static ArrayList<Site> simpleQuerySiteTransport(String querySQL) {
+	return TransportRequest.operatorSQL(querySQL);
 }
 
 public static ArrayList<String> textuelQuery(String keywords) {
@@ -91,7 +101,7 @@ return result ;
 * Second Operator : For mixed Query
 *
 *
-*/
+*/ 
 
 
 public void mixedQuery() {
