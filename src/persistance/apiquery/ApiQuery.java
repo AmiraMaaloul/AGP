@@ -3,7 +3,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import business.Hotel;
+import business.Site;
 import persistance.jdbc.HotelRequest;
+import persistance.jdbc.SiteRequest;
+import persistance.lucene.LuceneOperator;
 
 
 
@@ -14,18 +17,14 @@ public class ApiQuery {
 
 public ArrayList<Site> executeQuery(String query) throws SQLException {
 
-String simpleQuery = new String();
-        String textuelQuery = new String();
-        ArrayList<Object> results = new ArrayList<Object>();
-       
+     	ArrayList<Site> results = new ArrayList<Site>();
+      
         String[] splited = query.split("WITH");
         if((splited.length == 2)) {
-        simpleQuery = splited[0];
-        textuelQuery = splited[1] ;
+	        
         }else {
-        simpleQuery = splited[0];
-        System.out.println(simpleQuery);
-        results = simpleQuery(simpleQuery);
+        
+        	results  = simpleQuery(splited[0]);
         }
         return results ;
 }
@@ -39,23 +38,21 @@ String simpleQuery = new String();
 *
 */
 
-public ArrayList<Object> simpleQuery(String simpleQuery)throws SQLException {
-	
-	ArrayList<Object> results  =  new ArrayList<Object>();
-	if(search ("Location" , simpleQuery)) {
-		
-	}
-	if (search ("Hotel" , simpleQuery)) {
-		HotelRequest hotel = new HotelRequest();
-		results = (ArrayList<Object>) hotel.operatorSQL(simpleQuery);
-	}
-	if (search ("Site" , simpleQuery)) {	
-	}
-	if (search ("Transport" , simpleQuery)) {
-	}
-	
-	
+public static ArrayList<Site> simpleQuery(String querySQL) {
+	return SiteRequest.operatorSQL(querySQL);
 }
+
+public static ArrayList<String> textuelQuery(String keywords) {
+	return LuceneOperator.operator(keywords);
+}
+
+public static ArrayList<String> mixedQuery(String keywords;ArrayList<Site>) {
+	simpleQuery (splited[0]);
+    textuelQuery(splited[1]);
+}
+
+
+
 
 public static boolean search(String word , String query) {
 boolean result ;
