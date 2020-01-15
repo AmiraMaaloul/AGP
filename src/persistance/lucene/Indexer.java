@@ -55,6 +55,6 @@ public class Indexer {
             indexFile(file);
          }
       }
-      return writer.numDocs();
+      return writer.getDocStats().numDocs;
    }
 } 
