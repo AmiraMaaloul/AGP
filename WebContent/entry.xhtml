@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>Offre Proposition</title>
+</h:head>
+<h:body>
+	<p>
+		<strong>Welcome to Bali Island !</strong>
+	</p>
+
+	<h2>Votre voyage sur mesure</h2>
+	<fieldset>
+		<h:form>
+		
+			Hotel star : <h:inputText value="#{entryBean.star}" /> <br />
+			Rhytme : <h:inputText value="#{entryBean.rhytme}" /> <br />
+			Date d'arrivé : <h:inputText value="#{entryBean.arrDate}" /> <br />
+			Date de départ: <h:inputText value="#{entryBean.depDate}" /> <br />
+			Mots clés : <h:inputText value="#{entryBean.mot}" /> <br />    
+			<h:commandButton value="Start" action="#{entryBean.startSimulation}" />
+		</h:form>
+	</fieldset>
+</h:body>
+</html>
