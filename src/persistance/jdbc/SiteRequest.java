@@ -45,7 +45,7 @@ public class SiteRequest {
 		return readSiteList;
 	}
 
-	private static Site readSiteById(int id) {
+	public static Site readSiteById(int id) {
 		Site readSite = new Site();
 		try {
 			String selectSiteQuery = "SELECT * FROM site AS a WHERE a.id = ? ";
