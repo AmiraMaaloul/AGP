@@ -1,5 +1,9 @@
 package business;
 
+import java.util.ArrayList;
+
+import persistance.jdbc.SiteRequest;
+
 public class Site extends Location {
 
 	private String siteId;
@@ -66,6 +70,16 @@ public class Site extends Location {
 	public String toString() {
 		return "Site [siteId=" + siteId + ", siteName=" + siteName + ", siteType=" + siteType + ", sitePrice="
 				+ sitePrice + ", locationId=" + locationId + "]";
+	}
+	
+	
+	public ArrayList<Site> getSitesByCreteria(String siteName, int pricemin , int pricemax, String siteType){
+		ArrayList<Site> sites = new ArrayList<Site>();
+		
+		String query = "SELECT * from site where siteName= " +siteName+ "AND sitePrice >= "+pricemin+ "AND sitePrice <="+pricemax+ "AND siteType="+siteType+"" ;
+		
+		sites = SiteRequest.operatorSQL(query);
+		return sites;
 	}
 
 }
