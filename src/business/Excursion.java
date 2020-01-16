@@ -15,6 +15,10 @@ public class Excursion {
 		sites.add(s);
 	}
 
+	public int getNbSites() {
+		return sites.size();
+	}
+
 	public int getPrice() {
 		int price = 0;
 		for (Site s : sites) {
@@ -22,6 +26,20 @@ public class Excursion {
 		}
 
 		return price;
+	}
+
+	public List<Site> getSites() {
+		return sites;
+	}
+
+	public boolean intersects(Excursion e) {
+		for (Site site : e.sites) {
+			if (sites.contains(site)) {
+				return true;
+			}
+		}
+
+		return false;
 	}
 
 }

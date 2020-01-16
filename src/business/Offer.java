@@ -32,5 +32,9 @@ public class Offer {
 	public void setExcursions(List<Excursion> excursions) {
 		this.excursions = excursions;
 	}
+	
+	public int getNbExcursions() {
+		return excursions.size();
+	}
 
 }
