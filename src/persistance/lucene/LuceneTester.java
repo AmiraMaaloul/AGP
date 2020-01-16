@@ -11,8 +11,8 @@ import org.apache.lucene.search.ScoreDoc;
 import org.apache.lucene.search.TopDocs;
 public class LuceneTester {
 	
-   public String indexDir = new File("src").getAbsolutePath() + "\\persistance\\indexed";
-   public String dataDir = new File("src").getAbsolutePath() + "\\persistance\\description";
+   public String indexDir = new File("src").getAbsolutePath() + File.separator + "persistance" + File.separator + "indexed";
+   public String dataDir = new File("src").getAbsolutePath() + File.separator + "persistance" + File.separator + "description";
    public ArrayList<String> result = new ArrayList<String>();
    Indexer indexer;
    Searcher searcher;
@@ -106,7 +106,7 @@ public void createIndex() throws IOException {
 			File[] files = path.listFiles();
 			for (int i = 0; i < files.length; i++) {
 				if (files[i].isDirectory()) {
-					deleteDirectory(path + "\\" + files[i]);
+					deleteDirectory(path + File.separator + files[i]);
 				} else {
 					files[i].delete();
 				}

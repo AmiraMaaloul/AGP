@@ -5,16 +5,16 @@ public class Location {
 	private String locationId;
 	private String locationLatitude;
 	private String locationLongitude;
-	
+
 	public Location(String locationId, String locationLatitude, String locationLongitude) {
 		super();
 		this.locationId = locationId;
 		this.locationLatitude = locationLatitude;
 		this.locationLongitude = locationLongitude;
 	}
-	
+
 	public Location() {
-		
+
 	}
 
 	public String getLocationId() {
@@ -46,10 +46,5 @@ public class Location {
 		return "Location [locationId=" + locationId + ", locationLatitude=" + locationLatitude + ", locationLongitude="
 				+ locationLongitude + "]";
 	}
-	
-	
 
-	
-
-	
 }
