@@ -5,8 +5,8 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
+	
 <h:head>
-
 	<title> Bali !</title>
 	
 	</h:head>
@@ -15,68 +15,177 @@
 
  <h2 style="text-align: center;">Bali holidays !</h2>
 
-<img id="img" src = ".\ressource\images\bali2.jpg" /> 
+ <img id="img" src = ".\ressource\images\bali2.jpg" /> 
 
 
 <h:form style="width:800px;">
-	<p:growl id="message"></p:growl>
-	<p:tabView activeIndex="#{EntryBean}">
+	<p:tabView >
 	
 		<p:tab title="Offers">
-			                 
-			 	<h:outputText value=" Keyword(s) : " style="font-weight: bold"/>
-			 	<h:inputText value="#{entryBean.keyword}" /> <br />
-			 
-			 	<h:outputText value="Price min  : " style="font-weight: bold"/>
-			 	<h:inputText value="#{entryBean.pricemin}" /> <br />
+			    <table>       
+			 	<tr>
+			 	<td>
+			 	<h:outputText value=" Keyword(s)  " style="font-weight: bold"/>
+			    </td>
+			    <td>
 			 	
-				<h:outputText value="Price max : " style="font-weight: bold"/>
-                <h:inputText value="#{entryBean.pricemax}" /> <br />
- 
-                <h:outputText value="Confort :" style="font-weight: bold"/>
-                <h:inputText value="#{entryBean.confort}" /> <br />
-                			 	
-			 	<h:outputText value="Number of the day(s) : " style="font-weight: bold"/>
-			 	<h:inputText value="#{entryBean.nbday}" /> <br />
+			 	<h:inputText value="#{entryBean.offerkeyword}" />
+			 	</td>
+			 	</tr>
 			 	
-			 	<p:commandButton value="Search" update="#{entryBean.result}" icon="pi pi-check" />
+			 	<tr>
+			 	<td>
+			 	<h:outputText value="Price min   " style="font-weight: bold"/>
+			 	 </td>
+			    <td>
+			 	<h:inputText value="#{entryBean.offerpricemin}" /> 
+			 	</td>
+			 	</tr>
+			 	
+			 	<tr>
+			 	<td>
+				<h:outputText value="Price max  " style="font-weight: bold"/>
+                 </td>
+			    <td>
+			    
+                <h:inputText value="#{entryBean.offerpricemax}" /> 
+ 				</td>
+			 	</tr>
+                
+              
+			 	<tr>
+			 	<td>
+                <h:outputText value="Confort " style="font-weight: bold"/>
+                 </td>
+			    <td>
+                
+                <h:inputText value="#{entryBean.offerconfort}" /> 
+                </td>
+			 	</tr>			 	
+			 	
+			 	
+			 	<tr>
+			 	<td>
+			 	<h:outputText value="Number of  day(s)  " style="font-weight: bold"/>
+			 	 </td>
+			    <td>
+			 	
+			 	<h:inputText value="#{entryBean.offernbday}" /> 
+			 	
+			 	
+			 	</td>
+			 	</tr>
+                </table> 
+                
+              <h:commandButton value="Search" action="OfferResult" />
                 
 		</p:tab>	
 		
 		<p:tab title="Hotel">
-					 
-			 	<h:outputText value=" Hotel name : " style="font-weight: bold"/>
-			 	<h:inputText value="#{entryBean.nameHotel}" /> <br />
-			 
-			 	<h:outputText value="Price min  : " style="font-weight: bold"/>
-			 	<h:inputText value="#{entryBean.pricemin}" /> <br />
+			 <table>       
+				
+				<tr>
+			 	<td>
+			 		 
+			 	<h:outputText value=" Hotel name  " style="font-weight: bold"/>
+			 	</td>
+			 	<td>
 			 	
-				<h:outputText value="Price max : " style="font-weight: bold"/>
+			 	<h:inputText value="#{entryBean.nameHotel}" /> <br />
+			    </td>
+				 </tr>
+				 
+				 <tr>
+			 	<td>
+			 	<h:outputText value="Price min  " style="font-weight: bold"/>
+			 	
+			 	</td>
+			 	<td>
+			 	<h:inputText value="#{entryBean.pricemin}" /> <br />
+			 	</td>
+				 </tr>
+				 
+			 	 <tr>
+			 	<td>
+			 	 
+				<h:outputText value="Price max  " style="font-weight: bold"/>
+               </td>
+			 	<td>
+               
                 <h:inputText value="#{entryBean.pricemax}" /> <br />
- 
-                <h:outputText value="Rating :" style="font-weight: bold"/>
+ 				
+ 				</td>
+				 </tr>
+  				
+  				<tr>
+			 	<td>
+                <h:outputText value="Rating " style="font-weight: bold"/>
+               
+               </td>
+			 	<td>
+               
                	<p:rating value="#{entryBean.rating}" /> <br />
-                
-                <p:commandButton value="Search" update="#{entryBean.result}" icon="pi pi-check" />
+              
+            
+			 	</td>
+			 	</tr>
+                </table> 
+                  
+                <h:commandButton value="Search" action="OfferResult" />
                 
 		</p:tab>
 		
 		
-		<p:tab title="Sites">
-		
-				<h:outputText value=" Site name : " style="font-weight: bold"/>
+		<p:tab title="Site">
+		<table>
+				 <tr>
+			 	<td>
+				<h:outputText value=" Site name  " style="font-weight: bold"/>
+			 	</td> 
+			    <td>
+			 	
 			 	<h:inputText value="#{entryBean.nameSite}" /> <br />
-			 	
-			 	<h:outputText value="Type :" style="font-weight: bold"/>
+			 	</td> 
+			    </tr>
+			    
+			     <tr>
+			 	<td>
+			   
+			 	<h:outputText value="Type " style="font-weight: bold"/>
+                </td>
+			    <td>
+               
                 <h:inputText value="#{entryBean.typeSite}" /> <br />
-			 
-			 	<h:outputText value="Price min : " style="font-weight: bold"/>
-			 	<h:inputText value="#{entryBean.pricemin}" /> <br />
+			</td> 
+			    </tr>
+			    
+			 <tr>
+			 	<td>
+			 	<h:outputText value="Price min " style="font-weight: bold"/>
+			 	 </td>
+			    <td>
 			 	
-				<h:outputText value="Price max : " style="font-weight: bold"/>
+			 	<h:inputText value="#{entryBean.pricemin}" /> <br />
+			 	</td> 
+			    </tr>
+			    
+			 	<tr>
+			 	<td>
+			 	
+				<h:outputText value="Price max  " style="font-weight: bold"/>
+               </td>
+			    <td>
+               
                 <h:inputText value="#{entryBean.pricemax}" /> <br />
+              
+              
+        
+			 	</td>
+			 	</tr>
+                </table> 
                 
-                <p:commandButton value="Search" update="#{entryBean.result}" icon="pi pi-check" />
+                <h:commandButton value="Search" action="OfferResult" />
+           
            
 		</p:tab>
 	</p:tabView>
