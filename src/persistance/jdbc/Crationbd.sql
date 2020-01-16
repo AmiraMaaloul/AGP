@@ -11,9 +11,9 @@ CREATE TABLE location (
 
 CREATE TABLE hotel (
   hotelId INTEGER,
-  hotelName VARCHAR(50),
+  hotelName VARCHAR(250),
   hotelPrice  FLOAT,
-  address VARCHAR(200),
+  address VARCHAR(250),
   star INTEGER,
   locationId INTEGER,
   PRIMARY KEY (hotelId),
