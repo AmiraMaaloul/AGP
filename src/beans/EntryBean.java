@@ -1,189 +1,156 @@
 package beans;
 
+import java.io.Serializable;
+
 import javax.annotation.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 @ManagedBean
-
 @SessionScoped
-
-
 public class EntryBean implements Serializable {
-   
-private static final long serialVersionUID = -426721429642192283L;
 
-/*For Offers*/
-private String offerkeyword;
-private String offerpricemin;
-private String offerpricemax;
-private String offernbday;
-private String offerconfort ;
+	private static final long serialVersionUID = -426721429642192283L;
 
-/*For Hotels */
-private String hotelPriceMax ;
-private String hotelPriceMin;
-private String hotelName;
-private String rating ;
+	/* For Offers */
+	private String offerkeyword;
+	private String offerpricemin;
+	private String offerpricemax;
+	private String offernbday;
+	private String offerconfort;
 
+	/* For Hotels */
+	private String hotelPriceMax;
+	private String hotelPriceMin;
+	private String hotelName;
+	private String rating;
 
-/*For Sites*/
-private String siteName;
-private String sitePriceMin;
-private String sitePriceMax;
-private String siteType;
+	/* For Sites */
+	private String siteName;
+	private String sitePriceMin;
+	private String sitePriceMax;
+	private String siteType;
 
+	public EntryBean() {
 
-			public EntryBean()  {
-				
-			}
+	}
 
-
-		public String getOfferkeyword() {
+	public String getOfferkeyword() {
 		return offerkeyword;
-		}
-		
-		
-		public void setOfferkeyword(String offerkeyword) {
+	}
+
+	public void setOfferkeyword(String offerkeyword) {
 		this.offerkeyword = offerkeyword;
-		}
-		
-		
-		public String getOfferpricemin() {
+	}
+
+	public String getOfferpricemin() {
 		return offerpricemin;
-		}
-		
-		
-		public void setOfferpricemin(String offerpricemin) {
+	}
+
+	public void setOfferpricemin(String offerpricemin) {
 		this.offerpricemin = offerpricemin;
-		}
-		
-		
-		public String getOfferpricemax() {
+	}
+
+	public String getOfferpricemax() {
 		return offerpricemax;
-		}
-		
-		
-		public void setOfferpricemax(String offerpricemax) {
+	}
+
+	public void setOfferpricemax(String offerpricemax) {
 		this.offerpricemax = offerpricemax;
-		}
-		
-		
-		public String getOffernbday() {
+	}
+
+	public String getOffernbday() {
 		return offernbday;
-		}
-		
-		
-		public void setOffernbday(String offernbday) {
+	}
+
+	public void setOffernbday(String offernbday) {
 		this.offernbday = offernbday;
-		}
-		
-		
-		public String getOfferconfort() {
+	}
+
+	public String getOfferconfort() {
 		return offerconfort;
-		}
-		
-		
-		public void setOfferCconfort(String offerconfort) {
+	}
+
+	public void setOfferCconfort(String offerconfort) {
 		this.offerconfort = offerconfort;
-		}
-		
-		
-		public String getHotelPriceMax() {
+	}
+
+	public String getHotelPriceMax() {
 		return hotelPriceMax;
-		}
-		
-		
-		public void setHotelPriceMax(String hotelPriceMax) {
+	}
+
+	public void setHotelPriceMax(String hotelPriceMax) {
 		this.hotelPriceMax = hotelPriceMax;
-		}
-		
-		
-		public String getHotelPriceMin() {
+	}
+
+	public String getHotelPriceMin() {
 		return hotelPriceMin;
-		}
-		
-		
-		public void setHotelPriceMin(String hotelPriceMin) {
+	}
+
+	public void setHotelPriceMin(String hotelPriceMin) {
 		this.hotelPriceMin = hotelPriceMin;
-		}
-		
-		
-		public String getHotelName() {
+	}
+
+	public String getHotelName() {
 		return hotelName;
-		}
-		
-		
-		public void setHotelName(String hotelName) {
+	}
+
+	public void setHotelName(String hotelName) {
 		this.hotelName = hotelName;
-		}
-		
-		
-		public String getRating() {
+	}
+
+	public String getRating() {
 		return rating;
-		}
-		
-		
-		public void setRating(String rating) {
+	}
+
+	public void setRating(String rating) {
 		this.rating = rating;
-		}
-		
-		
-		public String getSiteName() {
+	}
+
+	public String getSiteName() {
 		return siteName;
-		}
-		
-		
-		public void setSiteName(String siteName) {
+	}
+
+	public void setSiteName(String siteName) {
 		this.siteName = siteName;
-		}
-		
-		
-		public String getSitePriceMin() {
+	}
+
+	public String getSitePriceMin() {
 		return sitePriceMin;
-		}
-		
-		
-		public void setSitePriceMin(String sitePriceMin) {
+	}
+
+	public void setSitePriceMin(String sitePriceMin) {
 		this.sitePriceMin = sitePriceMin;
-		}
-		
-		
-		public String getSitePriceMax() {
+	}
+
+	public String getSitePriceMax() {
 		return sitePriceMax;
-		}
-		
-		
-		public void setSitePriceMax(String sitePriceMax) {
+	}
+
+	public void setSitePriceMax(String sitePriceMax) {
 		this.sitePriceMax = sitePriceMax;
-		}
-		
-		
-		public String getSiteType() {
+	}
+
+	public String getSiteType() {
 		return siteType;
-		}
-		
-		
-		public void setSiteType(String siteType) {
+	}
+
+	public void setSiteType(String siteType) {
 		this.siteType = siteType;
-		}
-		
-		
-		
-		
-		
-		public String searchhotels() {
-		
+	}
+
+	public String searchhotels() {
+
 		return "HotelResult";
-		}
-		
-		public String searchoffers() {
-		
+	}
+
+	public String searchoffers() {
+
 		return "OfferResult";
-		}
-		
-		public String searchsites() {
-		
+	}
+
+	public String searchsites() {
+
 		return "SiteResult";
-		}
+	}
 
 }
