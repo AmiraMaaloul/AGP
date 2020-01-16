@@ -37,7 +37,9 @@
                 <h:inputText value="#{entryBean.confort}" /> <br />
                 			 	
 			 	<h:outputText value="Number of the day(s) : " style="font-weight: bold"/>
-			 	<h:inputText value="#{entryBean.nbjour}" /> <br />
+			 	<h:inputText value="#{entryBean.nbday}" /> <br />
+			 	
+			 	<p:commandButton value="Search" update="#{entryBean.result}" icon="pi pi-check" />
                 
 		</p:tab>	
 		
@@ -55,6 +57,8 @@
                 <h:outputText value="Rating :" style="font-weight: bold"/>
                	<p:rating value="#{ratingView.rating1}" />
                 
+                			 	<p:commandButton value="Search" update="#{entryBean.result}" icon="pi pi-check" />
+                
 		</p:tab>
 		
 		
@@ -71,10 +75,12 @@
 			 	
 				<h:outputText value="Price max : " style="font-weight: bold"/>
                 <h:inputText value="#{entryBean.pricemax}" /> <br />
+                
+                			 	<p:commandButton value="Search" update="#{entryBean.result}" icon="pi pi-check" />
+                
  
 		</p:tab>
 	</p:tabView>
-	
 	
 </h:form>
 
