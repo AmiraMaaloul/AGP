@@ -38,7 +38,7 @@ public class Indexer {
       return document; 
    }   
    private void indexFile(File file) throws IOException {
-      System.out.println("Indexing "+file.getCanonicalPath());
+      //System.out.println("Indexing "+file.getCanonicalPath());
       Document document = getDocument(file);
       writer.addDocument(document);
    }
@@ -55,6 +55,6 @@ public class Indexer {
             indexFile(file);
          }
       }
-      return writer.getDocStats().numDocs;
+      return writer.numDocs();
    }
 } 

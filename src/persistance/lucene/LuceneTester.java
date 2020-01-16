@@ -37,6 +37,40 @@ public void setResult(ArrayList<String> result) {
 	this.result = result;
 }
 
+
+
+public String getIndexDir() {
+	return indexDir;
+}
+
+public void setIndexDir(String indexDir) {
+	this.indexDir = indexDir;
+}
+
+public String getDataDir() {
+	return dataDir;
+}
+
+public void setDataDir(String dataDir) {
+	this.dataDir = dataDir;
+}
+
+public Indexer getIndexer() {
+	return indexer;
+}
+
+public void setIndexer(Indexer indexer) {
+	this.indexer = indexer;
+}
+
+public Searcher getSearcher() {
+	return searcher;
+}
+
+public void setSearcher(Searcher searcher) {
+	this.searcher = searcher;
+}
+
 public void createIndex() throws IOException {
       indexer = new Indexer(indexDir);
       int numIndexed;
@@ -61,8 +95,24 @@ public void createIndex() throws IOException {
           //  + doc.get(LuceneConstants.FILE_PATH));
             String resultSearsh = doc.get(LuceneConstants.FILE_PATH);
             result.add(resultSearsh);
-            System.out.println("File: "
-                    + result);
+            /*System.out.println("File: "
+                    + result);*/
       }  
    }
+   public static void deleteDirectory(String emplacement) {
+
+		File path = new File(emplacement);
+		if (path.exists()) {
+			File[] files = path.listFiles();
+			for (int i = 0; i < files.length; i++) {
+				if (files[i].isDirectory()) {
+					deleteDirectory(path + "\\" + files[i]);
+				} else {
+					files[i].delete();
+				}
+			}
+		}
+	}
 }
+
+
