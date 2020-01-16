@@ -1,5 +1,9 @@
 package business;
 
+import java.util.ArrayList;
+
+import persistance.jdbc.HotelRequest;
+
 public class Hotel extends Location  {
 
 	private String hotelId;
@@ -78,6 +82,16 @@ public class Hotel extends Location  {
 	public String toString() {
 		return "Hotel [hotelId=" + hotelId + ", hotelName=" + hotelName + ", hotelPrice=" + hotelPrice + ", address="
 				+ address + ", star=" + star + ", locationId=" + locationId + "]";
+	}
+	
+	
+	public ArrayList<Hotel> getHotelsByCreteria(String nameHotel, int pricemin , int pricemax, int rating){
+		ArrayList<Hotel> hotels = new ArrayList<Hotel>();
+		
+		String query = "SELECT * from hotel where hotelName= " +nameHotel+ "AND hotelPrice >= "+pricemin+ "AND hotelPrice <="+pricemax+ "AND star="+rating+"" ;
+		
+		hotels = HotelRequest.operatorSQL(query);
+		return hotels;
 	}
 	
 	

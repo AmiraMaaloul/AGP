@@ -46,7 +46,7 @@
 		<p:tab title="Hotel">
 					 
 			 	<h:outputText value=" Hotel name : " style="font-weight: bold"/>
-			 	<h:inputText value="#{entryBean.namehotel}" /> <br />
+			 	<h:inputText value="#{entryBean.nameHotel}" /> <br />
 			 
 			 	<h:outputText value="Price min  : " style="font-weight: bold"/>
 			 	<h:inputText value="#{entryBean.pricemin}" /> <br />
@@ -55,9 +55,9 @@
                 <h:inputText value="#{entryBean.pricemax}" /> <br />
  
                 <h:outputText value="Rating :" style="font-weight: bold"/>
-               	<p:rating value="#{ratingView.rating1}" />
+               	<p:rating value="#{entryBean.rating}" /> <br />
                 
-                			 	<p:commandButton value="Search" update="#{entryBean.result}" icon="pi pi-check" />
+                <p:commandButton value="Search" update="#{entryBean.result}" icon="pi pi-check" />
                 
 		</p:tab>
 		
@@ -65,7 +65,7 @@
 		<p:tab title="Sites">
 		
 				<h:outputText value=" Site name : " style="font-weight: bold"/>
-			 	<h:inputText value="#{entryBean.namesite}" /> <br />
+			 	<h:inputText value="#{entryBean.nameSite}" /> <br />
 			 	
 			 	<h:outputText value="Type :" style="font-weight: bold"/>
                 <h:inputText value="#{entryBean.typeSite}" /> <br />
@@ -76,8 +76,8 @@
 				<h:outputText value="Price max : " style="font-weight: bold"/>
                 <h:inputText value="#{entryBean.pricemax}" /> <br />
                 
-                			 	<p:commandButton value="Search" update="#{entryBean.result}" icon="pi pi-check" />
-               <p>test</p>
+                <p:commandButton value="Search" update="#{entryBean.result}" icon="pi pi-check" />
+           
 		</p:tab>
 	</p:tabView>
 	

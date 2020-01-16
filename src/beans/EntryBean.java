@@ -1,14 +1,17 @@
 package beans;
 
 
-public class EntryBean {
-		
+public class EntryBean {		
 	     
 	    private String keyword;
 	    private int pricemin;
 	    private int pricemax;
 	    private String confort;
 	    private int nbday;
+	    	    
+	    public String searchHotels(){
+	    	Hotel.
+	    } ;
 		public String getKeyword() {
 			return keyword;
 		}
@@ -39,9 +42,9 @@ public class EntryBean {
 		public void setNbday(int nbday) {
 			this.nbday = nbday;
 		}
-
-
-// test test test 12 12 12 
+		
+		
+		public String searchHotels()
 	 
 	   
 	
