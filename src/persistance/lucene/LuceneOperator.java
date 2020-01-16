@@ -18,6 +18,8 @@ public class LuceneOperator {
 		    	lucene = new LuceneTester();
 				lucene.createIndex();
 				lucene.search(keywords);
+				lucene.deleteDirectory(lucene.getIndexDir());
+				
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

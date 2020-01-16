@@ -1,4 +1,6 @@
 package persistance.apiquery;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -64,12 +66,15 @@ public class ApiQuery {
 		sqlResults = simpleQuerySite(splitedQuery[0]);
 		luceneResults = textuelQuery(splitedQuery[1]);
 	    
+		
 	    for (Site site : sqlResults) {
 			String id = site.getSiteId();
-			for (String fileName : luceneResults){
+			for (String file : luceneResults){
+				Path p = Paths.get(file);
+				String fileName = p.getFileName().toString();
 				String[] fileId = fileName.split(".txt");
 				if((fileId[0]).equals(id)) {
-					list.add(fileName);
+					list.add(file);
 				}
 			}
 		}
@@ -90,8 +95,13 @@ public class ApiQuery {
 		}
 	    /* Convert to an array of sites */
 	    for (String file : list) {
-			String[] element = file.split(".txt");
+	    	//System.out.println("File : "+file);
+	    	Path p = Paths.get(file);
+	    	String fileName = p.getFileName().toString();
+			String[] element = fileName.split(".txt");
+			System.out.println("Element "+element[0]);
 			int id = Integer.valueOf(element[0]);
+			System.out.println(id);
 			Site site = SiteRequest.getSiteById(id);
 			mixedResults.add(site);
 		}

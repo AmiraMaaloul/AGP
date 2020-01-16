@@ -51,7 +51,7 @@ public class SiteRequest {
 	public static Site getSiteById(int id) {
 		Site readSite = new Site();
 		try {
-			String selectSiteQuery = "SELECT * FROM site AS a WHERE a.id = ? ";
+			String selectSiteQuery = "SELECT * FROM site  WHERE siteId = ? ";
 			Connection dbConnection = JdbcConnection.getConnection();
 			java.sql.PreparedStatement preparedStatement = dbConnection.prepareStatement(selectSiteQuery);
 			preparedStatement.setInt(1, id);
