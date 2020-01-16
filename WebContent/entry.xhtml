@@ -13,7 +13,7 @@
 	
 <body >
 
- <h2 style="text-align: center;"> S'épanouir à Bali !</h2>
+ <h2 style="text-align: center;">Bali holidays !</h2>
 
 <img id="img" src = "\ressource\images\bali2.jpg" /> 
 
@@ -23,8 +23,6 @@
 	<p:tabView activeIndex="#{EntryBean}">
 	
 		<p:tab title="Offers">
-			 <h:panelGrid columns="2" cellpadding="5">
-			 
 			                 
 			 	<h:outputText value=" Keyword(s) : " style="font-weight: bold"/>
 			 	<h:inputText value="#{entryBean.keyword}" /> <br />
@@ -35,22 +33,16 @@
 				<h:outputText value="Price max : " style="font-weight: bold"/>
                 <h:inputText value="#{entryBean.pricemax}" /> <br />
  
-                <h:outputText value="Stars" style="font-weight: bold"/>
-                <h:inputText value="#{entryBean.star}" /> <br />
+                <h:outputText value="Confort :" style="font-weight: bold"/>
+                <h:inputText value="#{entryBean.confort}" /> <br />
+                			 	
+			 	<h:outputText value="Number of the day(s) : " style="font-weight: bold"/>
+			 	<h:inputText value="#{entryBean.nbjour}" /> <br />
                 
- 				<h:outputText value="Nombre d'excurtion(s) : " style="font-weight: bold"/>
-			 	<h:inputText value="#entryBean.nbexcurtion" /> <br />
-			 	
-			 	<h:outputText value="Nombre de jour(s) : " style="font-weight: bold"/>
-			 	<h:inputText value="#entryBean.nbjour" /> <br />
-                
-              </h:panelGrid>
-		</p:tab>
-		
+		</p:tab>	
 		
 		<p:tab title="Hotel">
-			<h:panelGrid columns="2" cellpadding="5">
-			 
+					 
 			 	<h:outputText value=" Hotel name : " style="font-weight: bold"/>
 			 	<h:inputText value="#{entryBean.namehotel}" /> <br />
 			 
@@ -60,14 +52,9 @@
 				<h:outputText value="Price max : " style="font-weight: bold"/>
                 <h:inputText value="#{entryBean.pricemax}" /> <br />
  
-                <h:outputText value="Stars" style="font-weight: bold"/>
-                <h:inputText value="#{entryBean.star}" /> <br />
+                <h:outputText value="Rating :" style="font-weight: bold"/>
+               	<p:rating value="#{ratingView.rating1}" />
                 
- 				<h:outputText value="Transport : " style="font-weight: bold"/>
-			 	<h:inputText value="#entryBean.transport" /> <br />
-			 	
-                
-              </h:panelGrid>
 		</p:tab>
 		
 		
@@ -79,14 +66,12 @@
 			 	<h:outputText value="Type :" style="font-weight: bold"/>
                 <h:inputText value="#{entryBean.typeSite}" /> <br />
 			 
-			 	<h:outputText value="Price min  : " style="font-weight: bold"/>
+			 	<h:outputText value="Price min : " style="font-weight: bold"/>
 			 	<h:inputText value="#{entryBean.pricemin}" /> <br />
 			 	
 				<h:outputText value="Price max : " style="font-weight: bold"/>
                 <h:inputText value="#{entryBean.pricemax}" /> <br />
  
- 				<h:outputText value="Transport : " style="font-weight: bold"/>
-			 	<h:inputText value="#entryBean.nbexcurtion" /> <br />
 		</p:tab>
 	</p:tabView>
 	
