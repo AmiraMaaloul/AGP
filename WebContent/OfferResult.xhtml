@@ -4,21 +4,30 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
-	<title>Offres</title>
+	<title>Offers</title>
 </h:head>
 <h:body>
-	<fieldset>
-		<legend>
-			<strong>Offre result</strong>
-		</legend>		
 	
-		Hotel name : #{resultBean.averageClientWaitingTime} <br /> 
-		Rating : #{resultBean.averageClientServiceTime} <br />
-		Price : #{resultBean.cashierOccupationRate} % <br /> 
-		Number of excursion(s) : #{resultBean.clientSatisfactionRate} % <br />
-		
-	</fieldset>
+	<h2 style="text-align: center;">List of offers (<h:outputText value="#{fn:length(entryBean.offers)}" />)</h2>
+	
+	<p:dataTable var="offer" value="#{entryBean.offers}">
+	    <p:column headerText="Hotel Name">
+	        <h:outputText value="#{offer.hotel.hotelName}" /> <br />
+	        <p:rating value="#{offer.hotel.star}" readonly="true"/>
+	    </p:column>
+	    <p:column headerText="Excursions">
+	        <p:dataTable value="#{offer.excursions}" var="excursion"> 
+	            <p:column headerText="Sites">
+   					<h:outputText value="#{excursion}"/> 
+   					</p:column>
+			</p:dataTable>
+	    </p:column>
+	    <p:column headerText="Price">
+	       <h:outputText value="#{offer.price}" />
+	    </p:column>
+	 	</p:dataTable>
 </h:body>
 </html>

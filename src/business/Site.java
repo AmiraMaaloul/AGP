@@ -1,10 +1,5 @@
 package business;
 
-import java.util.ArrayList;
-
-import persistance.jdbc.HotelRequest;
-import persistance.jdbc.SiteRequest;
-
 public class Site extends Location {
 
 	private String siteId;
@@ -72,29 +67,4 @@ public class Site extends Location {
 		return "Site [siteId=" + siteId + ", siteName=" + siteName + ", siteType=" + siteType + ", sitePrice="
 				+ sitePrice + ", locationId=" + locationId + "]";
 	}
-	
-	public static ArrayList<Site> getSitesByCreteria(String nameHotel, String pricemin , String pricemax, String siteType){
-		ArrayList<Site> sites = new ArrayList<Site>();
-		
-		String query = "SELECT * from site where 1=1";
-		if(nameHotel != "") {
-			query += " AND siteName = "+nameHotel;
-		}
-		if(pricemin != "") {
-			query += " AND sitePrice >= "+pricemin;
-		}
-		if(pricemax != "") {
-			query += " AND sitePrice >= "+pricemax;
-		}
-		if(siteType != "") {
-			query += " AND siteType = "+siteType;
-		}
-		
-		sites =SiteRequest.operatorSQL(query);
-		return sites;
-	}
-
-	
-	
-
 }

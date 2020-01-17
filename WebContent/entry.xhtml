@@ -35,7 +35,7 @@
 			 	
 			 	<tr>
 			 	<td>
-			 	<h:outputText value="Price min   " style="font-weight: bold"/>
+			 	<h:outputText value="Min price   " style="font-weight: bold"/>
 			 	 </td>
 			    <td>
 			 	<h:inputText value="#{entryBean.offerpricemin}" /> 
@@ -44,7 +44,7 @@
 			 	
 			 	<tr>
 			 	<td>
-				<h:outputText value="Price max  " style="font-weight: bold"/>
+				<h:outputText value="Max price  " style="font-weight: bold"/>
                  </td>
 			    <td>
 			    
@@ -52,21 +52,9 @@
  				</td>
 			 	</tr>
                 
-              
-			 	<tr>
+                <tr>
 			 	<td>
-                <h:outputText value="Confort " style="font-weight: bold"/>
-                 </td>
-			    <td>
-                
-                <h:inputText value="#{entryBean.offerconfort}" /> 
-                </td>
-			 	</tr>			 	
-			 	
-			 	
-			 	<tr>
-			 	<td>
-			 	<h:outputText value="Number of  day(s)  " style="font-weight: bold"/>
+			 	<h:outputText value="Number of excursions  " style="font-weight: bold"/>
 			 	 </td>
 			    <td>
 			 	
@@ -75,9 +63,22 @@
 			 	
 			 	</td>
 			 	</tr>
+              
+			 	<tr>
+			 	<td>
+                <h:outputText value="Min Hotel Rating " style="font-weight: bold"/>
+                 </td>
+			    <td>
+                
+                <p:rating value="#{entryBean.offerHotelRating}" />
+                </td>
+			 	</tr>			 	
+			 	
+			 	
+			 	
                 </table> 
                 
-              <h:commandButton value="Search" action="OfferResult" />
+              <h:commandButton value="Search" action="#{entryBean.generateOffers}" />
                 
 		</p:tab>	
 		
@@ -97,7 +98,7 @@
 				 
 				 <tr>
 			 	<td>
-			 	<h:outputText value="Price min  " style="font-weight: bold"/>
+			 	<h:outputText value="Min price  " style="font-weight: bold"/>
 			 	
 			 	</td>
 			 	<td>
@@ -108,7 +109,7 @@
 			 	 <tr>
 			 	<td>
 			 	 
-				<h:outputText value="Price max  " style="font-weight: bold"/>
+				<h:outputText value="Max price  " style="font-weight: bold"/>
                </td>
 			 	<td>
                
@@ -161,7 +162,7 @@
 			    
 			 <tr>
 			 	<td>
-			 	<h:outputText value="Price min " style="font-weight: bold"/>
+			 	<h:outputText value="Min price " style="font-weight: bold"/>
 			 	 </td>
 			    <td>
 			 	
@@ -172,7 +173,7 @@
 			 	<tr>
 			 	<td>
 			 	
-				<h:outputText value="Price max  " style="font-weight: bold"/>
+				<h:outputText value="Max price  " style="font-weight: bold"/>
                </td>
 			    <td>
                

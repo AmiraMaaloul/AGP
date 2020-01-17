@@ -22,7 +22,16 @@ public class Excursion {
 	public int getPrice() {
 		int price = 0;
 		for (Site s : sites) {
-			price += Integer.valueOf(s.getSitePrice());
+
+			float sitePrice = 0;
+			if (s.getSitePrice() != null) {
+				try {
+					sitePrice = Float.valueOf(s.getSitePrice());
+				} catch (NumberFormatException e) {
+					// Ignored
+				}
+			}
+			price += Math.round(sitePrice);
 		}
 
 		return price;
@@ -40,6 +49,17 @@ public class Excursion {
 		}
 
 		return false;
+	}
+	
+	@Override
+	public String toString() {
+		StringBuilder s = new StringBuilder(); 
+		
+		for (Site site : sites) {
+			s.append(site.getSiteName()).append(" --> ");
+		}
+		
+		return s.toString();
 	}
 
 }

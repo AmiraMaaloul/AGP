@@ -9,6 +9,9 @@
 	<title>Sites</title>
 </h:head>
 <h:body>
+
+	<h2 style="text-align: center;">List of sites</h2>
+
 	<p:dataTable var="site" value="#{entryBean.sites}">
 	    <p:column headerText="Name">
 	        <h:outputText value="#{site.siteName}" />
@@ -17,7 +20,7 @@
 	        <h:outputText value="#{site.sitePrice}" />
 	    </p:column>
 	    <p:column headerText="Type Site ">
-	        <h:outputText value="#{site.typeSite}" />
+	        <h:outputText value="#{site.siteType}" />
 	    </p:column>
 	</p:dataTable>
 </h:body>

@@ -210,16 +210,16 @@ INSERT INTO hotel (hotelId, hotelName, hotelPrice,Address,star,locationId) VALUE
 
 
 INSERT INTO site (siteId, siteName,siteType, sitePrice,locationId) VALUES
-(1, 'Bali Safari and Marine Park', 'activity',17.38,52 ),
-(2, 'bali bird park', 'activity', 20.12, 53),
-(3, 'Air Terjun Tibumana','activity',43.90 ,54 ),
-(4, 'Balai Gili', 'historical',43.50 ,55 ),
-(5, 'Bali Orchid Garden', 'activity',73.85 , 56),
-(6, 'Ubud palace', 'historical', 31.09,57 ),
-(7, 'Bali bombing monument', 'historical', 45.23,58 ),
-(8, 'Ground Zero Memorial', 'historical',55.12 ,59 ),
+(1, 'Bali Safari and Marine Park', 'activity',17,52 ),
+(2, 'bali bird park', 'activity', 20, 53),
+(3, 'Air Terjun Tibumana','activity',43,54 ),
+(4, 'Balai Gili', 'historical',43 ,55 ),
+(5, 'Bali Orchid Garden', 'activity',73 , 56),
+(6, 'Ubud palace', 'historical', 31,57 ),
+(7, 'Bali bombing monument', 'historical', 45,58 ),
+(8, 'Ground Zero Memorial', 'historical',55 ,59 ),
 (9, 'Pura Luhur Uluwatu', 'historical',30 ,60 ),
-(10, 'Monkey Forest d Ubud', 'historical',55.12 ,61 ),
+(10, 'Monkey Forest d Ubud', 'historical',55 ,61 ),
 (11, 'Pura Ulun Danu Bratan', 'historical',12 ,62 ),
 (12, 'Goa Gajah', 'historical',62 ,63 ),
 (13, 'Tegallalang Rice Terrace', 'historical',33 ,64 ),
@@ -310,7 +310,7 @@ INSERT INTO site (siteId, siteName,siteType, sitePrice,locationId) VALUES
 (98, 'Bangsring Underwater', 'activity',55 ,149 ),
 (99, 'Cucukan Beach', 'activity',15 ,150 ),
 (100, 'Pantai Cacalan', 'activity',55 ,151 ),
-(101, 'Taman Ujung Water Palace', 'historical', 34.12,152 );
+(101, 'Taman Ujung Water Palace', 'historical', 34,152 );
 
 
 INSERT INTO transport (transportId, transportType,priceKM, locationId) VALUES

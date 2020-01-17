@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+	xmlns:context="http://www.springframework.org/schema/context">
+
+	<context:property-placeholder
+		location="classpath:application.properties" />
+
+	<bean id="luceneTextIndexer" class="indexer.LuceneTextIndexer">
+		<property name="indexPath" value="${indexPath}" />
+	</bean>
+
+	<bean id="luceneTextSearcher" class="searcher.LuceneTextSearcher">
+		<constructor-arg index="0" value="${indexPath}" />
+	</bean>
+
+	<bean id="jdbcLuceneBaseFirstPlanDAO"
+		class="persistance.jdbc.JdbcLuceneBaseFirstPlanDAO">
+		<property name="textFolderPath" value="${textFolderPath}" />
+		<property name="tableName" value="${tableName}" />
+		<property name="keyName" value="${keyName}" />
+		<property name="textIndexer" ref="luceneTextIndexer" />
+		<property name="textSearcher" ref="luceneTextSearcher" />
+	</bean>
+
+	<bean id="jdbcLuceneBaseSecondPlanDAO"
+		class="persistance.jdbc.JdbcLuceneBaseSecondPlanDAO">
+		<property name="textFolderPath" value="${textFolderPath}" />
+		<property name="tableName" value="${tableName}" />
+		<property name="keyName" value="${keyName}" />
+		<property name="textIndexer" ref="luceneTextIndexer" />
+		<property name="textSearcher" ref="luceneTextSearcher" />
+	</bean>
+
+	<bean id="hotelDAO" class="persistance.jdbc.JdbcHotelDAO"></bean>
+
+	<bean id="siteDAO" class="persistance.jdbc.JdbcSiteDAO"></bean>
+
+
+</beans>

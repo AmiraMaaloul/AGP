@@ -32,9 +32,28 @@ public class Offer {
 	public void setExcursions(List<Excursion> excursions) {
 		this.excursions = excursions;
 	}
-	
+
 	public int getNbExcursions() {
 		return excursions.size();
+	}
+
+	public int getPrice() {
+
+		int hotelPrice = 0;
+		try {
+			hotelPrice = Integer.valueOf(hotel.getHotelPrice());
+		} catch (NumberFormatException e) {
+			// Ignored
+		}
+
+		int price = hotelPrice;
+
+		for (Excursion excursion : excursions) {
+			price += excursion.getPrice();
+		}
+
+		return price;
+
 	}
 
 }

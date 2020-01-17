@@ -1,10 +1,6 @@
 package business;
 
-import java.util.ArrayList;
-
-import persistance.jdbc.HotelRequest;
-
-public class Hotel extends Location  {
+public class Hotel extends Location {
 
 	private String hotelId;
 	private String hotelName;
@@ -12,11 +8,11 @@ public class Hotel extends Location  {
 	private String address;
 	private String star;
 	private String locationId;
-	
+
 	public Hotel() {
-		
+
 	}
-	
+
 	public Hotel(String locationId, String locationLatitude, String locationLongitude, String hotelId, String hotelName,
 			String hotelPrice, String address, String star, String locationId2) {
 		super(locationId, locationLatitude, locationLongitude);
@@ -27,8 +23,6 @@ public class Hotel extends Location  {
 		this.star = star;
 		locationId = locationId2;
 	}
-	
-
 
 	public String getHotelId() {
 		return hotelId;
@@ -83,33 +77,5 @@ public class Hotel extends Location  {
 		return "Hotel [hotelId=" + hotelId + ", hotelName=" + hotelName + ", hotelPrice=" + hotelPrice + ", address="
 				+ address + ", star=" + star + ", locationId=" + locationId + "]";
 	}
-	
-	
-	public static ArrayList<Hotel> getHotelsByCreteria(String nameHotel, String pricemin , String pricemax, String rating){
-		ArrayList<Hotel> hotels = new ArrayList<Hotel>();
-		
-		String query = "SELECT * from hotel where 1=1";
-		if(nameHotel != "") {
-			query += " AND hotelName = "+nameHotel;
-		}
-		if(pricemin != "") {
-			query += " AND hotelPrice >= "+pricemin;
-		}
-		if(pricemax != "") {
-			query += " AND hotelPrice >= "+pricemax;
-		}
-		if(rating != "") {
-			query += " AND star >= "+rating;
-		}
-		
-		hotels = HotelRequest.operatorSQL(query);
-		return hotels;
-	}
-	
-	
-	
 
-	
-	
-	
 }
