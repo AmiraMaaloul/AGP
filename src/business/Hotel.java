@@ -96,7 +96,7 @@ public class Hotel extends Location  {
 			query += " AND hotelPrice >= "+pricemin;
 		}
 		if(pricemax != "") {
-			query += " AND hotelPrice >= "+pricemax;
+			query += " AND hotelPrice <= "+pricemax;
 		}
 		if(rating != "") {
 			query += " AND star >= "+rating;
