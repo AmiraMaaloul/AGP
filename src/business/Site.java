@@ -73,18 +73,18 @@ public class Site extends Location {
 				+ sitePrice + ", locationId=" + locationId + "]";
 	}
 	
-	public static ArrayList<Site> getSitesByCreteria(String nameHotel, String pricemin , String pricemax, String siteType){
+	public static ArrayList<Site> getSitesByCreteria(String nameSite, String pricemin , String pricemax, String siteType){
 		ArrayList<Site> sites = new ArrayList<Site>();
 		
 		String query = "SELECT * from site where 1=1";
-		if(nameHotel != "") {
-			query += " AND siteName = "+nameHotel;
+		if(nameSite != "") {
+			query += " AND siteName = "+nameSite;
 		}
 		if(pricemin != "") {
 			query += " AND sitePrice >= "+pricemin;
 		}
 		if(pricemax != "") {
-			query += " AND sitePrice >= "+pricemax;
+			query += " AND sitePrice <= "+pricemax;
 		}
 		if(siteType != "") {
 			query += " AND siteType = "+siteType;
