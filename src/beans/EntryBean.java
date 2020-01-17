@@ -143,7 +143,7 @@ public class EntryBean {
 	}
 	public String searchHotels() {
 		
-		setHotels(Hotel.getHotelsByCreteria(hotelName,hotelPriceMin, hotelPriceMax , rating));
+		setHotels(Hotel.getHotelsByCreteria(hotelName,hotelPriceMin, hotelPriceMax));
 		return "HotelResult";
 	}
 	
