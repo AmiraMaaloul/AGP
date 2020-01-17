@@ -2,6 +2,7 @@ package business;
 
 import java.util.ArrayList;
 
+import persistance.jdbc.HotelRequest;
 import persistance.jdbc.SiteRequest;
 
 public class Site extends Location {
@@ -72,14 +73,28 @@ public class Site extends Location {
 				+ sitePrice + ", locationId=" + locationId + "]";
 	}
 	
-	
-	public ArrayList<Site> getSitesByCreteria(String siteName, int pricemin , int pricemax, String siteType){
+	public static ArrayList<Site> getSitesByCreteria(String nameHotel, String pricemin , String pricemax, String siteType){
 		ArrayList<Site> sites = new ArrayList<Site>();
 		
-		String query = "SELECT * from site where siteName= " +siteName+ "AND sitePrice >= "+pricemin+ "AND sitePrice <="+pricemax+ "AND siteType="+siteType+"" ;
+		String query = "SELECT * from site where 1=1";
+		if(nameHotel != "") {
+			query += " AND siteName = "+nameHotel;
+		}
+		if(pricemin != "") {
+			query += " AND sitePrice >= "+pricemin;
+		}
+		if(pricemax != "") {
+			query += " AND sitePrice >= "+pricemax;
+		}
+		if(siteType != "") {
+			query += " AND siteType = "+siteType;
+		}
 		
-		sites = SiteRequest.operatorSQL(query);
+		sites =SiteRequest.operatorSQL(query);
 		return sites;
 	}
+
+	
+	
 
 }

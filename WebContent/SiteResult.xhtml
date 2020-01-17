@@ -9,16 +9,16 @@
 	<title>Sites</title>
 </h:head>
 <h:body>
-	<fieldset>
-		<legend>
-			<strong>Site result</strong>
-		</legend>		
-	
-		Touristic site name : #{resultBean.nameSite} <br /> 
-		Type : #{resultBean.typeSite} <br />
-		Price : #{resultBean.price} % <br /> 
-
-		
-	</fieldset>
+	<p:dataTable var="site" value="#{entryBean.sites}">
+	    <p:column headerText="Name">
+	        <h:outputText value="#{site.siteName}" />
+	    </p:column>
+	    <p:column headerText="Price">
+	        <h:outputText value="#{site.sitePrice}" />
+	    </p:column>
+	    <p:column headerText="Type Site ">
+	        <h:outputText value="#{site.typeSite}" />
+	    </p:column>
+	</p:dataTable>
 </h:body>
 </html>

@@ -10,6 +10,22 @@
 </h:head>
 <h:body>
 
+	<h2 style="text-align: center;">Results Hotels !</h2>
+	
+	<p:dataTable var="hotel" value="#{entryBean.hotels}">
+	    <p:column headerText="Name">
+	        <h:outputText value="#{hotel.hotelName}" />
+	    </p:column>
+	    <p:column headerText="Price">
+	        <h:outputText value="#{hotel.hotelPrice}" />
+	    </p:column>
+	    <p:column headerText="Star">
+	        <h:outputText value="#{hotel.star}" />
+	    </p:column>
+	    <p:column headerText="Address">
+	        <h:outputText value="#{hotel.address}" />
+	    </p:column>
+	</p:dataTable>
 
 </h:body>
 </html>

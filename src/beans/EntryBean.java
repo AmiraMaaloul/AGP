@@ -1,7 +1,12 @@
 package beans;
 
+import java.util.ArrayList;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+
+import business.Hotel;
+import business.Site;
 
 
 
@@ -36,6 +41,11 @@ public class EntryBean {
 	private String sitePriceMin;
 	private String sitePriceMax;
 	private String siteType;
+	
+	
+	private ArrayList<Site> sites ;
+	private ArrayList<Hotel> hotels;
+	
 	public EntryBean() {
 	}
 	public String getOfferkeyword() {
@@ -115,6 +125,32 @@ public class EntryBean {
 	}
 	public void setSiteType(String siteType) {
 		this.siteType = siteType;
+	}
+	
+	
+	
+	public ArrayList<Site> getSites() {
+		return sites;
+	}
+	public void setSites(ArrayList<Site> sites) {
+		this.sites = sites;
+	}
+	public ArrayList<Hotel> getHotels() {
+		return hotels;
+	}
+	public void setHotels(ArrayList<Hotel> hotels) {
+		this.hotels = hotels;
+	}
+	public String searchHotels() {
+		
+		setHotels(Hotel.getHotelsByCreteria(hotelName,hotelPriceMin, hotelPriceMax , rating));
+		return "HotelResult";
+	}
+	
+	public String searchSites() {
+			
+		setSites(Site.getSitesByCreteria(siteName,sitePriceMin, sitePriceMax , siteType));
+		return "SiteResult";
 	}
 
 

@@ -85,10 +85,22 @@ public class Hotel extends Location  {
 	}
 	
 	
-	public ArrayList<Hotel> getHotelsByCreteria(String nameHotel, int pricemin , int pricemax, int rating){
+	public static ArrayList<Hotel> getHotelsByCreteria(String nameHotel, String pricemin , String pricemax, String rating){
 		ArrayList<Hotel> hotels = new ArrayList<Hotel>();
 		
-		String query = "SELECT * from hotel where hotelName= " +nameHotel+ "AND hotelPrice >= "+pricemin+ "AND hotelPrice <="+pricemax+ "AND star="+rating+"" ;
+		String query = "SELECT * from hotel where 1=1";
+		if(nameHotel != "") {
+			query += " AND hotelName = "+nameHotel;
+		}
+		if(pricemin != "") {
+			query += " AND hotelPrice >= "+pricemin;
+		}
+		if(pricemax != "") {
+			query += " AND hotelPrice >= "+pricemax;
+		}
+		if(rating != "") {
+			query += " AND star >= "+rating;
+		}
 		
 		hotels = HotelRequest.operatorSQL(query);
 		return hotels;
