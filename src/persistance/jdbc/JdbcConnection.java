@@ -7,7 +7,7 @@ public class JdbcConnection {
 	private static String host = "localhost";
 	private static String base = "agp";
 	private static String user = "root";
-	private static String password = "";
+	private static String password = "mysql";
 	private static String url = "jdbc:mysql://" + host + "/" + base;
 
 	/**
